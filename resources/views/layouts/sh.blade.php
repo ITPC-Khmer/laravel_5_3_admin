@@ -2584,6 +2584,12 @@ $base_url = asset('sh/');// base_url("assets");
     </div><!-- .container -->
 
 
+    <?php
+        $professors = \App\Professor::all();
+    ?>
+
+    @if($professors)
+
     <section id="home-professor">
 
         <div class="container">
@@ -2593,14 +2599,17 @@ $base_url = asset('sh/');// base_url("assets");
             <div class="team-slider carou-slider animation-element fade-in">
 
                 <div class="slider">
-
+                    @foreach($professors as $row)
+                        <?php $img_slide = json_decode($row->image_url);
+                        $filename = isset($img_slide[0])?$img_slide[0]:'#';
+                        ?>
                     <div class="item">
 
                         <div class="team box">
 
                             <div class="thumb">
 
-                                <img src="{{ $base_url }}/images/placeholder/team1.png" alt="">
+                                <img src="{{  asset("uploads/{$filename}") }}" alt="">
 
                                 <div class="thumb-info">
 
@@ -2628,209 +2637,18 @@ $base_url = asset('sh/');// base_url("assets");
 
                             <div class="info">
 
-                                <span class="name">Peter Hart</span>
+                                <span class="name">{{ _tt($row->title) }}</span>
 
-                                <span class="job">Economic professor</span>
+                                <span class="job">{{ $row->professor_type }}</span>
 
-                                <p>Nam tempus ipsum non magna varius imperdiet. Etiam non sapien id diam cursus rutrum. Nulla nec leo ultrices, porttitor dui vel ornare massa.</p>
+                                <p>{{ _tt($row->description) }}</p>
 
                             </div>
 
                         </div><!-- .team -->
 
                     </div><!-- .item -->
-
-
-
-                    <div class="item">
-
-                        <div class="team box">
-
-                            <div class="thumb">
-
-                                <img src="{{ $base_url }}/images/placeholder/team2.png" alt="">
-
-                                <div class="thumb-info">
-
-                                    <div class="socials">
-
-                                        <ul>
-
-                                            <li><a href="##" target="_blank"><i class="fa fa-envelope"></i></a></li>
-
-                                            <li><a href="##" target="_blank"><i class="fa fa-twitter"></i></a></li>
-
-                                            <li><a href="##" target="_blank"><i class="fa fa-linkedin "></i></a></li>
-
-                                        </ul>
-
-                                    </div>
-
-                                    <a href="##" class="read-more">Read More</a>
-
-                                </div><!-- .thumb-info -->
-
-                            </div><!-- .thumb -->
-
-
-
-                            <div class="info">
-
-                                <span class="name">Betty Lane</span>
-
-                                <span class="job">Biological Professor</span>
-
-                                <p>Curabitur laoreet imperdiet eros, condimentum feugiat quam. Maecenas elementum metus leo, vitae pellentesque justo. Nunc iaculis, velit ac posuere</p>
-
-                            </div>
-
-                        </div>
-
-                    </div><!-- .item -->
-
-
-
-                    <div class="item">
-
-                        <div class="team box">
-
-                            <div class="thumb">
-
-                                <img src="{{ $base_url }}/images/placeholder/team3.png" alt="">
-
-                                <div class="thumb-info">
-
-                                    <div class="socials">
-
-                                        <ul>
-
-                                            <li><a href="##" target="_blank"><i class="fa fa-envelope"></i></a></li>
-
-                                            <li><a href="##" target="_blank"><i class="fa fa-twitter"></i></a></li>
-
-                                            <li><a href="##" target="_blank"><i class="fa fa-linkedin "></i></a></li>
-
-                                        </ul>
-
-                                    </div>
-
-                                    <a href="##" class="read-more">Read More</a>
-
-                                </div><!-- .thumb-info -->
-
-                            </div><!-- .thumb -->
-
-
-
-                            <div class="info">
-
-                                <span class="name">Richard Pierce</span>
-
-                                <span class="job">Economics professor</span>
-
-                                <p>Nullam sed egestas nisi, sit amet commodo ex. Pellentesque egestas lobortis enim, quis laoreet ligula sodales nec. In lectus ante, gravida id  consectetur</p>
-
-                            </div>
-
-                        </div>
-
-                    </div><!-- .item -->
-
-
-
-                    <div class="item">
-
-                        <div class="team box">
-
-                            <div class="thumb">
-
-                                <img src="{{ $base_url }}/images/placeholder/team4.png" alt="">
-
-                                <div class="thumb-info">
-
-                                    <div class="socials">
-
-                                        <ul>
-
-                                            <li><a href="##" target="_blank"><i class="fa fa-envelope"></i></a></li>
-
-                                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-
-                                            <li><a href="#" target="_blank"><i class="fa fa-linkedin "></i></a></li>
-
-                                        </ul>
-
-                                    </div>
-
-                                    <a href="#" class="read-more">Read More</a>
-
-                                </div><!-- .thumb-info -->
-
-                            </div><!-- .thumb -->
-
-
-
-                            <div class="info">
-
-                                <span class="name">Janice Rose</span>
-
-                                <span class="job">Mathematics professor</span>
-
-                                <p>Suspendisse dolor ipsum, posuere nec velit at, commodo hendrerit neque. Sed vitae dui in sapien convallis rhoncus. Etiam sodales metus era</p>
-
-                            </div>
-
-                        </div>
-
-                    </div><!-- .item -->
-
-
-
-                    <div class="item">
-
-                        <div class="team box">
-
-                            <div class="thumb">
-
-                                <img src="{{ $base_url }}/images/placeholder/team1.png" alt="">
-
-                                <div class="thumb-info">
-
-                                    <div class="socials">
-
-                                        <ul>
-
-                                            <li><a href="#" target="_blank"><i class="fa fa-envelope"></i></a></li>
-
-                                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-
-                                            <li><a href="#" target="_blank"><i class="fa fa-linkedin "></i></a></li>
-
-                                        </ul>
-
-                                    </div>
-
-                                    <a href="#" class="read-more">Read More</a>
-
-                                </div><!-- .thumb-info -->
-
-                            </div><!-- .thumb -->
-
-
-
-                            <div class="info">
-
-                                <span class="name">Peter Hart</span>
-
-                                <span class="job">Economic professor</span>
-
-                                <p>Nam tempus ipsum non magna varius imperdiet. Etiam non sapien id diam cursus rutrum. Nulla nec leo ultrices, porttitor dui vel ornare massa.</p>
-
-                            </div>
-
-                        </div><!-- .team -->
-
-                    </div><!-- .item -->
+                    @endforeach
 
                 </div><!-- .slider -->
 
@@ -2840,7 +2658,7 @@ $base_url = asset('sh/');// base_url("assets");
 
     </section><!-- #home-professor -->
 
-
+    @endif
 
     <section id="home-partner">
 
@@ -3261,7 +3079,6 @@ $base_url = asset('sh/');// base_url("assets");
     $(function () {
         $('.my-logo').css('width', '');
         $('.my-logo').css('max-width', '');
-
     });
 </script>
 
