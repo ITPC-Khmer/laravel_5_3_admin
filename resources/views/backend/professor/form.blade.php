@@ -2,13 +2,13 @@
 $id = isset($row)?$row->id:0;
 $title = isset($row)?json_decode($row->title):null;
 $description = isset($row)?json_decode($row->description):null;
-$image_lib_type = isset($row)?$row->image_lib_type:null;
+$professor_type = isset($row)?$row->professor_type:null;
 $video_url = isset($row)?json_decode($row->video_url):null;
 $image_url = isset($row)?json_decode($row->image_url):null;
 ?>
 @extends('layouts.admin')
 
-@section('title', _t('Image Lib Form'))
+@section('title', _t('Professor Form'))
 
 @section('css')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
@@ -55,7 +55,7 @@ $image_url = isset($row)?json_decode($row->image_url):null;
                 <div class="portlet-title">
                     <div class="caption font-green-haze">
                         <i class="icon-settings font-green-haze"></i>
-                        <span class="caption-subject bold uppercase">{{ _t('Image Lib Form') }}</span>
+                        <span class="caption-subject bold uppercase">{{ _t('Professor Form') }}</span>
                     </div>
                     <div class="actions">
                           <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:" data-original-title="" title=""> </a>
@@ -73,17 +73,17 @@ $image_url = isset($row)?json_decode($row->image_url):null;
                 @endif
 
                 <div class="portlet-body form">
-                    {!! Form::open(['url' => 'cpanel/image-lib-save','files' => true,'class' => 'form-horizontal form-class','role' => 'form']) !!}
+                    {!! Form::open(['url' => 'cpanel/professor-save','files' => true,'class' => 'form-horizontal form-class','role' => 'form']) !!}
 
                         {!! Form::hidden('id',$id) !!}
                         <div class="form-body">
 
 
                             <div class="form-group form-md-line-input">
-                                {!! Form::label('image_lib_type', _t('Image Lib Type'), ['class' => 'col-md-2 control-label']) !!}
+                                {!! Form::label('professor_type', _t('Professor type'), ['class' => 'col-md-2 control-label']) !!}
                                 <div class="col-md-10">
 
-                                    {!! Form::select('image_lib_type', image_lib_type(), $image_lib_type,['class' => 'form-control','placeholder' => 'Pick a Image Lib Type...']) !!}
+                                    {!! Form::select('professor_type', professors_type(), $professor_type,['class' => 'form-control','placeholder' => 'Pick a Professor Type...']) !!}
                                     <div class="form-control-focus"> </div>
                                     {{--<span class="help-block">Some help goes here...</span>--}}
                                 </div>
@@ -114,8 +114,6 @@ $image_url = isset($row)?json_decode($row->image_url):null;
                                 </div>
                             </div>
 
-
-                            {!! Form::bsText("video_url[]", isset($video_url[0])?$video_url[0]:'',_t('video_url')) !!}
 
                             @if($id > 0)
                             <div class="row">
@@ -158,7 +156,7 @@ $image_url = isset($row)?json_decode($row->image_url):null;
                             </div>
                             @endif
 
-                            <div action="{{ url('/cpanel/image-lib-upload') }}"
+                            <div action="{{ url('/cpanel/professor-upload') }}"
                                  class="dropzone dropzone-file-area my-dropzone" id="my-dropzone" style="width: 500px; margin-top: 50px;"></div>
 
 

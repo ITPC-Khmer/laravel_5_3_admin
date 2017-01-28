@@ -1,7 +1,4 @@
 <?php
-use App\Post;
-use App\PostCategoryDetail;
-use Syscover\ShoppingCart\Item;
 
 Route::get('/', function () {
 
@@ -108,6 +105,15 @@ Route::group(
         Route::post('/image-lib-delete','ImageLibController@delete');
         Route::post('/image-lib-upload','ImageLibController@upload');
         Route::post('/image-lib-remove-upload','ImageLibController@remove_upload_tmp');
+
+        //==== ProfessorController ==============================
+        Route::get('/professor','ProfessorController@index');
+        Route::get('/professor-form','ProfessorController@form');
+        Route::put('/professor-form','ProfessorController@form');
+        Route::post('/professor-save','ProfessorController@save');
+        Route::post('/professor-delete','ProfessorController@delete');
+        Route::post('/professor-upload','ProfessorController@upload');
+        Route::post('/professor-remove-upload','ProfessorController@remove_upload_tmp');
 
         //==== item-category ==============================
         Route::get('/item-category','ItemCategoryController@index');

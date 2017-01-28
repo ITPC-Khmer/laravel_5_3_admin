@@ -78,6 +78,18 @@ function image_lib_type()
     ];
 }
 
+function professors_type()
+{
+    return [
+        'bachelor' => 'Bachelor degree',
+        'masters' => 'Masters degree',
+        'Doctorate' => 'Doctorate degree',
+        'other' => 'Other',
+    ];
+}
+
+
+
 function get_image_lib($image_lib_type)
 {
     return \App\ImageLib::where('image_lib_type',$image_lib_type)->first();

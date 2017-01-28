@@ -445,6 +445,7 @@ $base_url = asset('admin');
                             <?php
                             $arrMenu = [
                                 ['title' => 'Event and Latest News','url' => 'cpanel/event-post'],
+                                ['title' => 'Professor List','url' => 'cpanel/professor'],
                             ];
 
                             ?>

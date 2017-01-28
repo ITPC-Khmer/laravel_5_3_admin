@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', _t('Image Lib List'))
+@section('title', _t('Professor List'))
 
 @section('content')
 
@@ -10,7 +10,7 @@
             <div class="portlet">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-bell-o"></i>{{ _t('Image Lib List') }} </div>
+                        <i class="fa fa-bell-o"></i>{{ _t('Professor List') }} </div>
                     <div class="tools">
                         <a href="javascript:" class="collapse"> </a>
                        {{-- <a href="#portlet-config" data-toggle="modal" class="config"> </a>
@@ -23,7 +23,7 @@
                         <table class="table table-striped table-bordered table-advance table-hover">
                             <thead>
                             <tr>
-                                <th style="width: 160px;">  <a href="{{ url('/cpanel/image-lib-form') }}" class="btn btn-outline btn-circle btn-sm purple">
+                                <th style="width: 160px;">  <a href="{{ url('/cpanel/professor-form') }}" class="btn btn-outline btn-circle btn-sm purple">
                                         <i class="fa fa-plus"></i> Add </a> </th>
                                 <th> {{ _t('title') }}
                                     {!! get_title_search('title',$title) !!}
@@ -39,7 +39,7 @@
                             @foreach ($result as $row)
                                 <tr>
                                     <td>
-                                        {!! Form::open(['url' => "/cpanel/image-lib-form", 'method' => 'put']) !!}
+                                        {!! Form::open(['url' => "/cpanel/professor-form", 'method' => 'put']) !!}
                                         {!! Form::hidden('id',$row->id) !!}
                                         <button type="submit" class="btn btn-outline btn-circle btn-sm purple">
                                             <i class="fa fa-edit"></i> Edit </button>
@@ -104,7 +104,7 @@
                     },
                     function(){
                         $.ajax({
-                            url : '{{ url('/cpanel/image-lib-delete') }}',
+                            url : '{{ url('/cpanel/professor-delete') }}',
                             async : false,
                             data : {id : id},
                             error: function() {
