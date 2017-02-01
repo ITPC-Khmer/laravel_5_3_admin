@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', function () {
+Route::get('/x159758457855474888', function () {
 
     /*$x = get_image_lib('slide');
     if($x) {
@@ -27,13 +27,20 @@ Route::get('/', function () {
     dd($p->tags);*/
 
     //return view('x');
-    return view('layouts.sh');
+   // return view('layouts.sh');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::group(['namespace' => 'FrontEnd'],
+    function (){
+        Route::get('/','FrontController@index');
+        Route::get('/event-detail/{id}.html','FrontController@event_post_detail');
+        Route::get('/event/{event_type}.html','FrontController@event_list');
+    }
+);
 
 Route::group(
     ['prefix' => 'cpanel','namespace' => 'Admin'],
@@ -67,6 +74,13 @@ Route::group(
         Route::put('/category-form','PostCategoryController@form');
         Route::post('/category-save','PostCategoryController@save');
         Route::post('/category-delete','PostCategoryController@delete');
+
+        //==== Faculty =============================
+        Route::get('/faculty','FacultyController@index');
+        Route::get('/faculty-form','FacultyController@form');
+        Route::put('/faculty-form','FacultyController@form');
+        Route::post('/faculty-save','FacultyController@save');
+        Route::post('/faculty-delete','FacultyController@delete');
 
         //==== Post =============================
         Route::get('/post','PostController@index');

@@ -108,9 +108,10 @@ function _tt($arr)
     $l = 'en';
     $t = '';
     try{
-        if(is($arr->$l)) $t = $arr->$l;
+        if(isset($arr->$l)) $t = $arr->$l;
+
         if($t.'' == ''){
-            if(is($arr->en))
+            if(isset($arr->en))
                 $t = $arr->en;
         }
         return $t;
