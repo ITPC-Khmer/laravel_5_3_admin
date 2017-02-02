@@ -23,14 +23,11 @@
                         <table class="table table-striped table-bordered table-advance table-hover">
                             <thead>
                             <tr>
-                                <th style="width: 160px;">  <a href="{{ url('/cpanel/faculty-form') }}" class="btn btn-outline btn-circle btn-sm purple">
+                                <th style="width: 80px;">  <a href="{{ url('/cpanel/faculty-form') }}" class="btn btn-outline btn-circle btn-sm purple">
                                         <i class="fa fa-plus"></i> Add </a> </th>
-                                <th> {{ _t('title') }}
-                                    {!! get_title_search('title',$title) !!}
-                                </th>
-                                <th> {{ _t('description') }}
-                                    {!! get_title_search('description',$description) !!}
-                               </th>
+                                <th> {{ _t('title') }} </th>
+                                <th> {{ _t('description') }} </th>
+                                <th style="width: 70px">&nbsp;</th>
 
                             </tr>
                             </thead>
@@ -43,15 +40,18 @@
                                         {!! Form::hidden('id',$row->id) !!}
                                         <button type="submit" class="btn btn-outline btn-circle btn-sm purple">
                                             <i class="fa fa-edit"></i> Edit </button>
-                                        <a data-id="{{ $row->id }}" href="javascript:" class="btn btn-outline btn-circle dark btn-sm black vm-del">
-                                            <i class="fa fa-trash-o"></i> Delete </a>
+                                       {{-- <a data-id="{{ $row->id }}" href="javascript:" class="btn btn-outline btn-circle dark btn-sm black vm-del">
+                                            <i class="fa fa-trash-o"></i> Delete </a>--}}
                                         {!! Form::close() !!}
                                     </td>
                                     <td class="highlight">
                                         <div class="success"></div>{{ nbs(2) }}
-                                        <a href="javascript:"> {!! highlight($row->title,$title) !!} </a>
+                                        {!! ($row->title) !!}
                                     </td>
-                                    <td class="hidden-xs"> {!! highlight($row->description,$description) !!} </td>
+                                    <td class="hidden-xs"> {!! ($row->description) !!} </td>
+                                    <td class="hidden-xs"> {!!  isset($row->is_last)?'<a href="'.url("/cpanel/faculty-detail/{$row->id}").'">'._t('Detail').'</a>':'' !!}
+
+                                    </td>
 
                                 </tr>
                             @endforeach
@@ -65,7 +65,7 @@
     </div>
 
 
-    <div class="row">
+{{--    <div class="row">
         <div class="col-md-5">
             <div class="dataTables_info">
                 @if($result->total() > 12)
@@ -80,7 +80,7 @@
         </div>
 
 
-    </div>
+    </div>--}}
 
 @endsection
 

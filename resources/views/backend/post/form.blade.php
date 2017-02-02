@@ -125,9 +125,6 @@ $tags = isset($row)?$tags->toArray():[0];
                                 </div>
                             </div>
 
-
-
-
                             <div class="row">
                                 <div class="col-md-2 col-sm-3 col-xs-4">
                                     <ul class="nav nav-tabs tabs-left">

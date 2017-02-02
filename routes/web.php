@@ -78,9 +78,10 @@ Route::group(
         //==== Faculty =============================
         Route::get('/faculty','FacultyController@index');
         Route::get('/faculty-form','FacultyController@form');
+        Route::get('/faculty-detail/{id}','FacultyController@detail');
         Route::put('/faculty-form','FacultyController@form');
         Route::post('/faculty-save','FacultyController@save');
-        Route::post('/faculty-delete','FacultyController@delete');
+        /*Route::post('/faculty-delete','FacultyController@delete');*/
 
         //==== Post =============================
         Route::get('/post','PostController@index');

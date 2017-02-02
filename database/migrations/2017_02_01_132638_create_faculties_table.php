@@ -17,6 +17,7 @@ class CreateFacultiesTable extends Migration
             $table->increments('id');
             $table->text('title')->nullable();
             $table->text('description')->nullable();
+            $table->text('content')->nullable();
             $table->integer('parent')->nullable();
             $table->timestamps();
         });

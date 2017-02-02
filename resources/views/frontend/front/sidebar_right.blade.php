@@ -3,46 +3,7 @@
 
     <h3 class="widget-title">Academic Program </h3>
 
-    <ul>
-
-        <li><a href="##">ASSOCIATE</a>
-            <ul>
-
-                <li><a href='#web/web/num/Pages?id=59'>Management</a></li>
-                <li><a href='#web/web/num/Pages?id=60'>Marketing</a></li>
-                <li><a href='#web/web/num/Pages?id=89'>Entrepreneurship</a></li>
-                <li><a href='#web/web/num/Pages?id=90'>Economics</a></li>
-                <li><a href='#web/web/num/Pages?id=91'>Economics for Development</a></li>
-                <li><a href='#web/web/num/Pages?id=92'>Accounting</a></li>
-            </ul>
-        </li>
-        <li><a href="##">Bachelor</a>
-            <ul>
-
-                <li><a href='#web/web/num/Pages?id=59'>Management</a></li>
-                <li><a href='#web/web/num/Pages?id=60'>Marketing</a></li>
-            </ul>
-        </li>
-        <li><a href="##">MASTER</a>
-            <ul>
-
-
-                <li><a href='#web/web/num/Pages?id=91'>Economics for Development</a></li>
-                <li><a href='#web/web/num/Pages?id=92'>Accounting</a></li>
-            </ul>
-        </li>
-        <li><a href="##">DOCTORAL</a>
-            <ul>
-
-
-                <li><a href='#web/web/num/Pages?id=89'>Entrepreneurship</a></li>
-                <li><a href='#web/web/num/Pages?id=90'>Economics</a></li>
-            </ul>
-        </li>
-
-
-
-    </ul>
+    {!! \App\Faculty::get_faculty_list_front() !!}
 
 </aside><!-- .widget -->
 

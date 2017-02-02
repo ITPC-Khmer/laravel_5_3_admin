@@ -17,7 +17,7 @@ class FacultyController extends ControllerAdmin
 
     public function index(Request $request)
     {
-        $q['title'] = $request->input('title','');
+        /*$q['title'] = $request->input('title','');
         $q['description'] = $request->input('description','');
 
         $_post_category = Faculty::orderBy('faculties.id','DESC');
@@ -49,7 +49,10 @@ class FacultyController extends ControllerAdmin
            }
         }
 
-        return view('backend.faculty.index',array_merge(['result' => $post_categories],$q));
+        return view('backend.faculty.index',array_merge(['result' => $post_categories],$q));*/
+
+
+       return view('backend.faculty.index',['result' => Faculty::get_all_faculty_list()]);
 
 
     }
@@ -57,11 +60,11 @@ class FacultyController extends ControllerAdmin
     function form(Request $request)
     {
         $id = $request->input('id',0) - 0 ;
-
         $row = null;
         if($id - 0 > 0)
         {
             $row = Faculty::find($id);
+            if($row)$row->update_detail = 0;
         }
 
         return view('backend.faculty.form',['row' => $row]);
@@ -69,12 +72,17 @@ class FacultyController extends ControllerAdmin
 
     public function save(Request $request)
     {
-        $this->validate($request, [
-            'title' => 'required',
-            'description' => 'required'
-        ]);
+        $update_detail = $request->input('update_detail',0) - 0 ;
+
+        if($update_detail == 0) {
+            $this->validate($request, [
+                'title' => 'required',
+                'description' => 'required'
+            ]);
+        }
 
         $id = $request->input('id',0) - 0 ;
+
 
         if($id > 0) // update
         {
@@ -83,9 +91,13 @@ class FacultyController extends ControllerAdmin
             $post_category = new Faculty();
         }
 
-        $post_category->title =  $request->input('title');
-        $post_category->description =  $request->input('description');
-        $post_category->parent =  $request->input('parent',0)-0;
+        if($update_detail == 0) {
+            $post_category->title = $request->input('title');
+            $post_category->description = $request->input('description');
+            $post_category->parent = $request->input('parent', 0) - 0;
+        }else{
+            $post_category->content = json_encode($request->input('content'));
+        }
 
         if($post_category->save())
         {
@@ -112,6 +124,25 @@ class FacultyController extends ControllerAdmin
 
     }
 
+    function detail($id)
+    {
+        $id = $id - 0 ;
 
+        $row = null;
+        if($id - 0 > 0)
+        {
+            $row = Faculty::find($id);
+            if($row) {
+                $row->update_detail = 1;
+                return view('backend.faculty.form', ['row' => $row]);
+            }
+
+        }
+
+        return redirect('cpanel/faculty');
+
+
+
+    }
 
 }
