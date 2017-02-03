@@ -39,6 +39,7 @@ Route::group(['namespace' => 'FrontEnd'],
         Route::get('/','FrontController@index');
         Route::get('/event-detail/{id}.html','FrontController@event_post_detail');
         Route::get('/event/{event_type}.html','FrontController@event_list');
+        Route::get('/faculty/{id}.html','FrontController@faculty_detail');
     }
 );
 

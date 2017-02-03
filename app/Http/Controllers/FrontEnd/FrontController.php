@@ -71,6 +71,9 @@ class FrontController extends Controller
 
     }
 
+    public function faculty_detail($id)
+    {
 
+    }
 
 }
