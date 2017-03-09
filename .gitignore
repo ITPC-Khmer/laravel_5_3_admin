@@ -1,7 +1,7 @@
 /node_modules
 /public/storage
 /public/_uploads
-/public/uploads
+public/uploads
 /public/sh/images/placeholder
 
 /vendor

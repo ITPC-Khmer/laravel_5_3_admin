@@ -235,24 +235,15 @@ $base_url = asset('sh/');// base_url("assets");
                                     </div><!-- .mega-menu -->
 
                                 </li>
-                                <li><a href="#blog.html">Planning / Statistics</a>
+                                <li><a href="#blog.html">{{ _t('CUS KP Office') }}</a>
 
                                     <ul class="sub-menu">
-
-                                        <li><a href="#blog.html">ការិយាល័យ
-                                                រដ្ឋបាល-ធនធានមនុស្ស និងទីផ្សារ
-                                            </a></li>
-
-                                        <li><a href="#blog-list.html">ការិយាល័យសិក្សា និងកិច្ចការនិស្សិត
-                                                ផ្នែកព័ត៌មានវិទ្យា
-                                            </a></li>
-
-                                        <li><a href="#blog-list-v2.html">Blog List Version 2</a></li>
-
-                                        <li><a href="#single.html">Single Blog</a></li>
-
-                                        <li><a href="#single-v2.html">Single Blog Version 2</a></li>
-
+                                        <li><a href="">{{ _t('Job Club') }}</a></li>
+                                        <li><a href="">{{ _t('Job Specification') }}</a></li>
+                                        <li>{{ nbs(5) }}a. <a href="">xxxx</a></li>
+                                        <li>{{ nbs(5) }}b. <a href="">xxxx</a></li>
+                                        <li>{{ nbs(5) }}c. <a href="">xxxx</a></li>
+                                        <li>{{ nbs(5) }}d. <a href="">xxxx</a></li>
                                     </ul>
 
                                 </li>
