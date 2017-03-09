@@ -237,13 +237,12 @@ $base_url = asset('sh/');// base_url("assets");
                                 </li>
                                 <li><a href="#blog.html">{{ _t('CUS KP Office') }}</a>
 
-                                    <ul class="sub-menu">
+                                    <ul class="sub-menu" style="width: 350px;">
                                         <li><a href="">{{ _t('Job Club') }}</a></li>
                                         <li><a href="">{{ _t('Job Specification') }}</a></li>
-                                        <li>{{ nbs(5) }}a. <a href="">xxxx</a></li>
-                                        <li>{{ nbs(5) }}b. <a href="">xxxx</a></li>
-                                        <li>{{ nbs(5) }}c. <a href="">xxxx</a></li>
-                                        <li>{{ nbs(5) }}d. <a href="">xxxx</a></li>
+                                        @foreach(\App\CusKpCategory::all() as $row)
+                                            <li>{{ nbs(4) }}<a href="">{{ $loop->index +1 }}.{{ $row->title }}</a></li>
+                                        @endforeach
                                     </ul>
 
                                 </li>

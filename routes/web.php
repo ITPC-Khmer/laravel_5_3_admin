@@ -76,6 +76,13 @@ Route::group(
         Route::post('/category-save','PostCategoryController@save');
         Route::post('/category-delete','PostCategoryController@delete');
 
+        //==== CUS KP Category =============================
+        Route::get('/kp-category','CusKpCategoryController@index');
+        Route::get('/kp-category-form','CusKpCategoryController@form');
+        Route::put('/kp-category-form','CusKpCategoryController@form');
+        Route::post('/kp-category-save','CusKpCategoryController@save');
+        Route::post('/kp-category-delete','CusKpCategoryController@delete');
+
         //==== Faculty =============================
         Route::get('/faculty','FacultyController@index');
         Route::get('/faculty-form','FacultyController@form');

@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-01-21.
+    * Generated on 2017-03-09.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -41,6 +41,7 @@ namespace PHPSTORM_META {
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
             'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
+            'image' instanceof \Intervention\Image\ImageManager,
             'cartProvider' instanceof \Syscover\ShoppingCart\CartProvider,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'html' instanceof \Collective\Html\HtmlBuilder,
@@ -158,6 +159,7 @@ namespace PHPSTORM_META {
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
             'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
+            'image' instanceof \Intervention\Image\ImageManager,
             'cartProvider' instanceof \Syscover\ShoppingCart\CartProvider,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'html' instanceof \Collective\Html\HtmlBuilder,
@@ -275,6 +277,7 @@ namespace PHPSTORM_META {
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
             'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
+            'image' instanceof \Intervention\Image\ImageManager,
             'cartProvider' instanceof \Syscover\ShoppingCart\CartProvider,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'html' instanceof \Collective\Html\HtmlBuilder,
@@ -392,6 +395,7 @@ namespace PHPSTORM_META {
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
             'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
+            'image' instanceof \Intervention\Image\ImageManager,
             'cartProvider' instanceof \Syscover\ShoppingCart\CartProvider,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'html' instanceof \Collective\Html\HtmlBuilder,
